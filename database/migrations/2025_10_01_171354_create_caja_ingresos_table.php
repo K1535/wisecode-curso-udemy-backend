@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('client_segments', function (Blueprint $table) {
+        Schema::create('caja_ingresos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 250);
-            $table->unsignedTinyInteger('state')->default(1);
+            $table->unsignedBigInteger('caja_sucursale_id');
+            $table->longText('description');
+            $table->double('amount', null, 0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('client_segments');
+        Schema::dropIfExists('caja_ingresos');
     }
 };

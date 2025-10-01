@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('warehouses', function (Blueprint $table) {
+        Schema::create('product_wallets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 250);
-            $table->string('address', 250)->nullable();
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('unit_id');
+            $table->unsignedBigInteger('client_segment_id')->nullable();
             $table->unsignedBigInteger('sucursale_id')->nullable();
-            $table->unsignedTinyInteger('state')->default(1);
+            $table->double('price', null, 0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('warehouses');
+        Schema::dropIfExists('product_wallets');
     }
 };

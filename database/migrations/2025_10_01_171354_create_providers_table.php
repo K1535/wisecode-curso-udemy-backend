@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('email', 250)->nullable();
             $table->string('phone', 50)->nullable();
             $table->string('address', 250)->nullable();
-            $table->string('imagen', 250);
-            $table->unsignedTinyInteger('state')->default(1);
+            $table->string('imagen', 250)->nullable();
+            $table->boolean('state')->unsigned()->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

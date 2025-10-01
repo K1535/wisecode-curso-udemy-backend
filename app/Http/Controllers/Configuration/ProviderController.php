@@ -29,7 +29,7 @@ class ProviderController extends Controller
                     "phone" => $provider->phone,
                     "address" => $provider->address,
                     "state" => $provider->state,
-                    "imagen" => $provider->imagen ? env("APP_URL")."storage/".$provider->imagen : NULL,
+                    "imagen" => $provider->imagen ? url('storage/'.$provider->imagen) : NULL,
                     "created_at" => $provider->created_at->format("Y-m-d h:i A")
                 ];
             }),
@@ -72,7 +72,7 @@ class ProviderController extends Controller
                 "phone" => $provider->phone,
                 "address" => $provider->address,
                 "state" => $provider->state,
-                "imagen" => $provider->imagen ? env("APP_URL")."storage/".$provider->imagen : NULL,
+                "imagen" => $provider->imagen ? url('storage/'.$provider->imagen) : NULL,
                 "created_at" => $provider->created_at->format("Y-m-d h:i A")
             ],
         ]);
@@ -128,7 +128,7 @@ class ProviderController extends Controller
                 "phone" => $provider->phone,
                 "address" => $provider->address,
                 "state" => $provider->state,
-                "imagen" => $provider->imagen ? env("APP_URL")."storage/".$provider->imagen : NULL,
+                "imagen" => $provider->imagen ? url('storage/'.$provider->imagen) : NULL,
                 "created_at" => $provider->created_at->format("Y-m-d h:i A")
             ],
         ]);
