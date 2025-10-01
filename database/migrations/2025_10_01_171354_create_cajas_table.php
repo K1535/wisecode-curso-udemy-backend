@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_categories', function (Blueprint $table) {
+        Schema::create('cajas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 250);
-            $table->string('imagen', 250);
-            $table->unsignedTinyInteger('state')->default(1);
+            $table->unsignedBigInteger('sucursale_id');
+            $table->boolean('type')->unsigned()->comment('1 es caja chica y 2 caja fuerte');
+            $table->double('amount', null, 0);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_categories');
+        Schema::dropIfExists('cajas');
     }
 };

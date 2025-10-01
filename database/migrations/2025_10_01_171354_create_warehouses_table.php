@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('method_payments', function (Blueprint $table) {
+        Schema::create('warehouses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 250);
-            $table->unsignedBigInteger('method_payment_id')->nullable();
-            $table->unsignedTinyInteger('state')->default(1);
+            $table->string('address', 250)->nullable();
+            $table->unsignedBigInteger('sucursale_id')->nullable();
+            $table->boolean('state')->unsigned()->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('method_payments');
+        Schema::dropIfExists('warehouses');
     }
 };

@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('method_payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->softDeletes();
-            $table->rememberToken();
+            $table->string('name', 250);
+            $table->unsignedBigInteger('method_payment_id')->nullable();
+            $table->boolean('state')->unsigned()->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('method_payments');
     }
 };
