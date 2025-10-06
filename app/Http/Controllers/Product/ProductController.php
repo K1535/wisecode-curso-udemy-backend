@@ -106,10 +106,10 @@ class ProductController extends Controller
             ]);
         }
 
-        if($request->hasFile("product_imagen")){
-            $path = Storage::putFile("products",$request->file("product_imagen"));
-            $request->request->add(["imagen" => $path]);
-        }
+            if($request->hasFile("product_imagen")){
+                $path = $request->file("product_imagen")->store("products", "public");
+                $request->request->add(["imagen" => $path]);
+            }
 
         $product = Product::create($request->all());
 

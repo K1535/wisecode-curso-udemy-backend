@@ -464,94 +464,150 @@ table tr td:last-child {
 </head>
 <body>
 
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Descargar Contrato</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    /* normalización y base CSS */
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { -moz-tab-size: 4; tab-size: 4; }
+    html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; font-size: 13px; }
+    hr { height: 0; color: inherit; }
+    abbr[title] { text-decoration: underline dotted; }
+    b, strong { font-weight: bolder; }
+    code, kbd, samp, pre { font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; font-size: 1em; }
+    small { font-size: 80%; }
+    sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+    sub { bottom: -0.25em; }
+    sup { top: -0.5em; }
+    table { text-indent: 0; border-color: inherit; width: 100%; border-collapse: collapse; }
+    button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; }
+    button, select { text-transform: none; }
+    button, [type='button'], [type='reset'], [type='submit'] { -webkit-appearance: button; }
+    ::-moz-focus-inner { border-style: none; padding: 0; }
+    :-moz-focusring { outline: 1px dotted ButtonText; }
+    :-moz-ui-invalid { box-shadow: none; }
+    legend { padding: 0; }
+    progress { vertical-align: baseline; }
+    ::-webkit-inner-spin-button, ::-webkit-outer-spin-button { height: auto; }
+    [type='search'] { -webkit-appearance: textfield; outline-offset: -2px; }
+    ::-webkit-search-decoration { -webkit-appearance: none; }
+    ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; }
+    summary { display: list-item; }
+
+    /* estilos del contrato */
+    table tr td { padding: 0; }
+    table tr td:last-child { text-align: right; }
+    .bold { font-weight: bold; }
+    .right { text-align: right; }
+    .large { font-size: 1.2em; }
+    .total { font-weight: bold; color: #fb7578; }
+    .logo-container { margin: 20px 0 30px 0; }
+    .invoice-info-container { font-size: 0.875em; }
+    .invoice-info-container td { padding: 4px 0; }
+    .client-name { font-size: 1.5em; vertical-align: top; }
+    .line-items-container { margin: 15px 0; font-size: 0.875em; }
+    .line-items-container th { text-align: left; color: #999; border-bottom: 2px solid #ddd; padding: 10px 0 15px 0; font-size: 0.75em; text-transform: uppercase; }
+    .line-items-container th:last-child { text-align: right; }
+    .line-items-container td { padding: 5px 0; }
+    .line-items-container.has-bottom-border tbody tr:last-child td { padding-bottom: 25px; border-bottom: 2px solid #ddd; }
+    .line-items-container.has-bottom-border { margin-bottom: 0; }
+    .line-items-container th.heading-quantity { width: 50px; }
+    .line-items-container th.heading-price { text-align: right; width: 100px; }
+    .line-items-container th.heading-subtotal { width: 100px; }
+    .payment-info { width: 38%; font-size: 0.75em; line-height: 1.5; }
+    .footer { margin-top: 30px; }
+    .footer-info { float: right; margin-top: 5px; font-size: 0.75em; color: #ccc; }
+    .footer-info span { padding: 0 5px; color: black; }
+    .footer-info span:last-child { padding-right: 0; }
+    .page-container { display: none; }
+    .page-break { page-break-after: always; }
+    .number-clausulas p, .number-clausulas strong, .number-clausulas ul li { font-size: 0.76rem; margin: 0; }
+    .number-clausulas p { text-align: justify; }
+    .number-clausulas strong { float: left; }
+    .place-date { text-align: right; }
+    .place-date p { font-size: 0.6rem; }
+  </style>
+</head>
+
+<body>
+
 <div class="web-container page-break">
 
-  <!-- See invoice.html! It is injected here... -->
   <div class="page-container">
-    Page
-    <span class="page"></span>
-    of
-    <span class="pages"></span>
+    Page <span class="page"></span> of <span class="pages"></span>
   </div>
 
   <div class="logo-container">
     <table>
-        <tbody>
-            <tr>
-                <td style="padding: 0 !important;border-bottom:none;">
-                    <img
-                        style="height: 75px;background:black;"
-                        src="{{ public_path('laravest.png') }}"
-                    >
-                </td>
-                
-                <td style="padding: 0 !important;border-bottom:none;">
-                    N° SERIE: <strong>#{{ $proforma->id }}</strong>
-                    <br>
-                    <img
-                        style="width:130px;background:black;"
-                        src="{{ public_path('laravest.png') }}"
-                    >
-                    <br>
-                    <small>https://www.laravest.com/</small>
-                    <br>
-                    <small>echodeveloper960@gmail.com</small>
-                </td>
-            </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <td style="padding: 0 !important; border-bottom:none;">
+            <img style="height: 75px; background:black;" src="{{ public_path('laravest.png') }}">
+          </td>
+          <td style="padding: 0 !important; border-bottom:none;">
+            N° SERIE: <strong>#{{ $proforma->id }}</strong>
+            <br>
+            <img style="width:130px; background:black;" src="{{ public_path('laravest.png') }}">
+            <br>
+            <small>https://www.laravest.com/</small>
+            <br>
+            <small>echodeveloper960@gmail.com</small>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
+
   <div style="clear:both;"></div>
+
   <table class="invoice-info-container">
     <tr>
-        <td>
-          N° CONTRATO: <strong>#{{ $proforma->id }}</strong>
-        </td>
-
-        <td>
-          FECHA CONTRATO: {{ $proforma->created_at->format("Y/m/d") }}
-        </td>
+      <td>N° CONTRATO: <strong>#{{ $proforma->id }}</strong></td>
+      <td>FECHA CONTRATO: {{ optional($proforma->created_at)->format("Y/m/d") }}</td>
     </tr>
-    <div class="" style="display: block;width:100%;border:1px solid black;height:1px;"></div>
+
     <tr>
-      <td class="">
-        <b>Datos del cliente: </b>
-        <br>
-        <br>
-        CLIENTE: {{ $proforma->client->full_name }}
-        @if ($proforma->proforma_deliverie->region && $proforma->proforma_deliverie->provincia
-        && $proforma->proforma_deliverie->distrito)
-            <br>
-            DEPART./PROVINCIA CLIENTE: <strong>{{ $proforma->proforma_deliverie->region }}/{{ $proforma->proforma_deliverie->provincia }}/{{ $proforma->proforma_deliverie->distrito }}</strong>
+      <td>
+        <b>Datos del cliente: </b><br><br>
+        CLIENTE: {{ optional($proforma->client)->full_name }}
+        @if(optional($proforma->proforma_deliverie)->region && optional($proforma->proforma_deliverie)->provincia && optional($proforma->proforma_deliverie)->distrito)
+          <br>
+          DEPART./PROVINCIA CLIENTE: 
+          <strong>{{ optional($proforma->proforma_deliverie)->region }}/{{ optional($proforma->proforma_deliverie)->provincia }}/{{ optional($proforma->proforma_deliverie)->distrito }}</strong>
         @endif
       </td>
-      <td>
-        DOC.  {{ $proforma->client->n_document }}
-      </td>
-    </tr>
-    <tr>
-        <td>TIPO CLIENTE: {{ $proforma->client_segment->name }}</td>
-        <td>TELÉFONO: {{ $proforma->client->phone }}</td>
-    </tr>
-    <div class="" style="display: block;width:100%;border:1px solid black;height:1px;"></div>
-    <tr>
-        <td>
-            DIRECCIÓN: <strong>{{ $proforma->proforma_deliverie->address }}</strong>
-            <br>
-            Lugar de entrega: <strong>{{ $proforma->proforma_deliverie->sucursal_deliverie->name }}</strong>
-        </td>
-        <td></td>
-    </tr>
-    <div class="" style="display: block;width:100%;border:1px solid black;height:1px;"></div>
-    <tr>
-        <td>
-         VENDEDOR: <strong>{{ $proforma->asesor->name.' '.$proforma->asesor->surname }}</strong>
-        </td>
-        <td>
-            TELÉFONO: {{ $proforma->asesor->phone }}
-        </td>
+      <td>DOC. {{ optional($proforma->client)->n_document }}</td>
     </tr>
 
+    <tr>
+      <td>TIPO CLIENTE: {{ optional($proforma->client_segment)->name }}</td>
+      <td>TELÉFONO: {{ optional($proforma->client)->phone }}</td>
+    </tr>
+
+    <tr>
+      <td>
+        DIRECCIÓN: <strong>{{ optional($proforma->proforma_deliverie)->address }}</strong>
+        <br>
+        Lugar de entrega: <strong>{{ optional(optional($proforma->proforma_deliverie)->sucursal_deliverie)->name }}</strong>
+      </td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>
+        VENDEDOR: <strong>{{ optional($proforma->asesor)->name.' '.optional($proforma->asesor)->surname }}</strong>
+      </td>
+      <td>
+        TELÉFONO: {{ optional($proforma->asesor)->phone }}
+      </td>
+    </tr>
   </table>
 
   <table class="line-items-container">
@@ -564,21 +620,20 @@ table tr td:last-child {
       </tr>
     </thead>
     <tbody>
-        @foreach ($proforma->details as $detail)
-            <tr>
-                <td>{{ $detail->quantity }}</td>
-                <td>
-                    {{ $detail->product->title }}
-                    Categoria: {{ $detail->product_categorie->name }}<br>
-                    Descripción: {{ $detail->description }}
-                </td>
-                <td class="right">{{ $detail->subtotal + $detail->impuesto }} PEN</td>
-                <td class="bold">{{ $detail->total }} PEN</td>
-            </tr>
-        @endforeach
+      @foreach ($proforma->details as $detail)
+        <tr>
+          <td>{{ $detail->quantity }}</td>
+          <td>
+            {{ optional($detail->product)->title }}
+            Categoria: {{ optional($detail->product_categorie)->name }}<br>
+            Descripción: {{ $detail->description }}
+          </td>
+          <td class="right">{{ $detail->subtotal + $detail->impuesto }} PEN</td>
+          <td class="bold">{{ $detail->total }} PEN</td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
-
 
   <table class="line-items-container has-bottom-border">
     <thead>
@@ -591,42 +646,41 @@ table tr td:last-child {
     <tbody>
       <tr>
         <td class="payment-info">
-            <div>
-                METODO DE PAGO: <strong>{{ $proforma->getFirstPayment() ? $proforma->getFirstPayment()->method_payment->name  : '----' }}</strong>
-                @if ($proforma->getFirstPayment() &&
-                $proforma->getFirstPayment()->banco_id)
-                <br>
-                <span style="text-transform: uppercase;">{{ $proforma->getFirstPayment()->banco->name }}</span>
-                @endif
-            </div>
+          <div>
+            METODO DE PAGO: <strong>{{ optional($proforma->getFirstPayment())->method_payment->name ?? '----' }}</strong>
+            @if(optional($proforma->getFirstPayment())->banco_id)
+              <br>
+              <span style="text-transform: uppercase;">{{ optional(optional($proforma->getFirstPayment())->banco)->name }}</span>
+            @endif
+          </div>
         </td>
-        <td class="large">{{ Carbon\Carbon::parse($proforma->proforma_deliverie->date_entrega)->format("Y/m/d") }}</td>
-
+        <td class="large">{{ optional($proforma->proforma_deliverie)->date_entrega ? Carbon\Carbon::parse($proforma->proforma_deliverie->date_entrega)->format("Y/m/d") : '' }}</td>
         <td class="payment-info">
-            <div class="large total">
-                TOTAL: {{ $proforma->total }} PEN
-                @if ($proforma->discount > 0)
-                <br>
-                DESCUENTO: - 60 PEN
-                @endif
-            </div>
-            <div>
-              ADELANTADO: <strong>{{ $proforma->paid_out }} PEN</strong>
-            </div>
-            <div>
-              SALDO: <strong>{{ $proforma->debt }} PEN</strong>
-            </div>
+          <div class="large total">
+            TOTAL: {{ $proforma->total ?? 0 }} PEN
+            @if ($proforma->discount > 0)
+              <br>
+              DESCUENTO: - {{ $proforma->discount }} PEN
+            @endif
+          </div>
+          <div>ADELANTADO: <strong>{{ $proforma->paid_out ?? 0 }} PEN</strong></div>
+          <div>SALDO: <strong>{{ $proforma->debt ?? 0 }} PEN</strong></div>
         </td>
+      </tr>
     </tbody>
   </table>
 
-    <div class="footer">
-        <div class="footer-info">
-            <span> ANOTACIONES FINALES: {{ $proforma->description }} </span>
-        </div>
+  <div class="footer">
+    <div class="footer-info">
+      <span> ANOTACIONES FINALES: {{ $proforma->description ?? '' }} </span>
     </div>
+  </div>
 
 </div>
+
+</body>
+</html>
+
 
 
 </body></html>

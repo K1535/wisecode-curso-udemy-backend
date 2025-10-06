@@ -42,6 +42,8 @@ class Product extends Model
         "length",
     ];
 
+    protected $appends = ['product_imagen'];
+
     public function setCreatedAtAttribute($value) {
         date_default_timezone_set("America/Lima");
         $this->attributes["created_at"] = Carbon::now();
